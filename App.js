@@ -14,6 +14,12 @@ const firebaseConfig = {
 	measurementId: "G-BY9J09L617"
 }
 
+import { Provider } from 'react-redux'
+import { createStore, applyMiddleware } from 'redux'
+import rootReducer from './redux/reducers'
+import thunk from 'redux-thunk'
+const store = createStore(rootReducer, applyMiddleware(thunk))
+
 if(firebase.apps.length === 0) {
 	firebase.initializeApp(firebaseConfig)
 }
@@ -23,6 +29,7 @@ import { createStackNavigator } from '@react-navigation/stack'
 
 import LandingScreen from './components/auth/Landing'
 import RegisterScreen from './components/auth/Register'
+import MainScreen from './components/Main'
 
 const Stack = createStackNavigator()
 
@@ -74,11 +81,9 @@ export class App extends Component {
 		}
 
 		return (
-			<View style={{ flex: 1, justifyContent: 'center' }}>
-				<Text>
-					User is logged in
-				</Text>
-			</View>
+			<Provider store={store}>
+				<MainScreen />
+			</Provider>
 		)
 	}
 }
@@ -86,10 +91,10 @@ export class App extends Component {
 export default App
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+	container: {
+		flex: 1,
+		backgroundColor: '#fff',
+		alignItems: 'center',
+		justifyContent: 'center',
+	},
 });
