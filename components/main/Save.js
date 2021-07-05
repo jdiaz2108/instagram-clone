@@ -22,7 +22,6 @@ export default function Save(props) {
         const taskCompleted = () => {
             task.snapshot.ref.getDownloadURL().then((snapshot) => {
                 savePostData(snapshot)
-                console.log(snapshot)
             })
         }
 

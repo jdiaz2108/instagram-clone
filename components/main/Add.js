@@ -33,20 +33,18 @@ export default function App({ navigation }) {
             allowsEditing: true,
             aspect: [1, 1],
             quality: 1,
-        });
-    
-        console.log(result);
+        })
     
         if (!result.cancelled) {
-            setImage(result.uri);
+            setImage(result.uri)
         }
     };
 
     if (hasCameraPermission === null || hasGalleryPermission === null ) {
-        return <View />;
+        return <View />
     }
     if (hasCameraPermission === false || hasGalleryPermission === false) {
-        return <Text>No access to camera</Text>;
+        return <Text>No access to camera</Text>
     }
     return (
         <View style={{ flex: 1 }}>
