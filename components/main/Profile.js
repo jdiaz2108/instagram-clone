@@ -122,6 +122,7 @@ const styles = StyleSheet.create({
         aspectRatio: 1/1,
     }
 })
+
 const mapStateToProps = (store) => ({
     currentUser: store.userState.currentUser,
     posts: store.userState.posts,

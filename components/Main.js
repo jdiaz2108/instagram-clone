@@ -27,10 +27,10 @@ export class Main extends Component {
         return (
             <Tab.Navigator initialRouteName="Feed" labeled={false}>
                 <Tab.Screen name="Feed" component={FeedScreen} options={{ tabBarIcon: ({ color, size }) => (
-                        <MaterialCommunityIcons name="home" color={color} size={26} />
+                    <MaterialCommunityIcons name="home" color={color} size={26} />
                 ),}} />
                 <Tab.Screen name="Search" component={SearchScreen} navigation={this.props.navigation} options={{ tabBarIcon: ({ color, size }) => (
-                        <MaterialCommunityIcons name="magnify" color={color} size={26} />
+                    <MaterialCommunityIcons name="magnify" color={color} size={26} />
                 ),}} />
                 <Tab.Screen name="AddContainer" 
                     component={EmptyScreen} 

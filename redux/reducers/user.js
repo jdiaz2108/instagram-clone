@@ -28,7 +28,5 @@ export const user = (state = initialState, action) => {
 
         default:
             return state
-
     }
-    
 }
